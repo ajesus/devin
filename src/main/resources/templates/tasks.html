@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks</title>
+</head>
+<body>
+
+<h1>Lista de tareas</h1>
+
+<ul>
+    <li th:each="task : ${tasks}">
+        <span th:text="${task.name}"></span> -
+        <span th:text="${task.completed}"></span>
+        <form th:action="'/tasks/' + ${task.id} + '/delete'" method="post" style="display: inline;">
+            <button type="submit">Delete</button>
+        </form>
+   </li>
+</ul>
+<h2>Nueva tarea</h2>
+
+<!-- CREATE -->
+<form action="/tasks-view" method="post">
+
+    <input type="text" name="name" placeholder="Nombre" required>
+
+    <label>
+        Completada:
+        <input type="checkbox" name="completed">
+    </label>
+
+    <button type="submit">Guardar</button>
+
+</form>
+
+</body>
+</html>

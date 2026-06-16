@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +19,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(String name, Boolean completed) {
+    public Task(String name, Boolean completed) { 
         this.name = name;
         this.completed = completed;
     }
